@@ -9,7 +9,7 @@ A local HTTP service monitor with a React dashboard, a FastAPI scheduler and Pos
 - Incidents and recovery tracking, in-app alerts, read/unread history.
 - Sample-based availability, latency percentiles, period charts, activity map and CSV export.
 - English/Spanish, light/dark themes and browser-local profile/avatar framing.
-- Database migrations, a test suite and a proposed GitHub Actions workflow.
+- Database migrations, a test suite and a verified GitHub Actions workflow.
 
 Scheduled checks continue only while the backend is running. Profile, images, language and theme are stored in the browser; monitoring history is in PostgreSQL. CSV exports neutralize spreadsheet formulas in text fields. Availability measures observed checks, not continuous uptime or a contractual SLA.
 
@@ -64,7 +64,7 @@ npm audit
 unset SENTINEL_TEST_DATABASE_URL
 ```
 
-106 backend tests and 24 frontend tests passed locally on Windows with an isolated PostgreSQL 18 cluster. Linux/WSL execution remains unverified on this computer. GitHub Actions is configured but **has not run remotely**. See [validation](docs/VALIDATION.md).
+106 backend tests and 24 frontend tests passed locally on Windows with an isolated PostgreSQL 18 cluster. The [first real GitHub Actions run](https://github.com/wasatnight/api-sentinel/actions/runs/41297019150) also passed on Ubuntu 24.04 with Python 3.12, Node 22 and PostgreSQL 18, including migrations, tests, Ruff, schema verification, build and npm audit. Native WSL2 installation/startup remains unverified on this computer. See [validation](docs/VALIDATION.md).
 
 ## Security and scope
 
@@ -81,7 +81,7 @@ See [SECURITY.md](SECURITY.md), [third-party notices](THIRD_PARTY_NOTICES.md) an
 - **No automatic retention**, log rotation, hosted deployment or installer.
 - Browser preferences are not part of a PostgreSQL backup.
 - Windows DPAPI scripts are Windows-only. Linux uses local environment configuration, never DPAPI.
-- WSL2/native Linux setup and the first real GitHub Actions run still need validation.
+- WSL2/native Linux startup still needs validation. Automated Linux checks have passed in GitHub Actions.
 - Possible development tasks: retention policies with tests, authenticated workspace boundaries, opt-in notification adapters, reproducible Linux smoke tests and better accessibility/end-to-end coverage. These are proposals, not implemented features.
 
 ## Project status and license

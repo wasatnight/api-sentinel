@@ -2,7 +2,7 @@
 
 ## Evidence and confirmation
 
-The candidate was copied from the owner's existing API Sentinel 1.1 directory. Its 68 selected baseline source/config/test files matched the previously delivered English ZIP byte-for-byte. No .git marker was found in the app directory or its inspected parent project directories; no historical author/contributor list could therefore be reconstructed. The candidate has a new local Git repository, without a commit or remote.
+The candidate was copied from the owner's existing API Sentinel 1.1 directory. Its 68 selected baseline source/config/test files matched the previously delivered English ZIP byte-for-byte. No .git marker was found in the app directory or its inspected parent project directories; no historical author/contributor list could therefore be reconstructed. At the start of this review the candidate had a new local Git repository without a commit or remote. After explicit owner approval, it was published publicly at https://github.com/wasatnight/api-sentinel with MIT licensing; the original local preparation commit is preserved separately.
 
 The owner stated in this chat that the code/program is a personal initiative and explicitly authorized sharing the code excluding .env and personal servers. No named human collaborators, client, employer or university material were disclosed. This is owner testimony, not an independent legal determination or a claim that all components are exclusively owned.
 

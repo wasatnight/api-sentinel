@@ -1,6 +1,6 @@
 # Linux / Windows WSL2 setup
 
-Status on 2026-11-01: `wsl --status` and `wsl --list --verbose` reported WSL is not installed. No WSL installation, elevation or reboot was attempted. The Linux helper was reviewed and linted, **not executed under Linux/WSL**. GitHub Actions is not a substitute for local WSL validation until it actually runs.
+Status on 2026-11-01: `wsl --status` and `wsl --list --verbose` reported WSL is not installed. No WSL installation, elevation or reboot was attempted. The Linux helper was reviewed and linted, **not executed under Linux/WSL**. GitHub Actions has now passed its automated checks on Ubuntu 24.04; this does not verify the native WSL startup procedure.
 
 ## 1. Optional WSL installation (owner action)
 
@@ -113,4 +113,4 @@ The script inserts 3 paused fictional services and 72 synthetic check rows; it s
 
 ## Pending platform verification
 
-Run the complete README procedure and tests in a clean WSL2 environment, confirm migrations and shutdown/restart, inspect permissions and execute the first real GitHub Actions run. This remains pending, not a claimed successful Linux setup.
+Run the complete README procedure and tests in a clean WSL2 environment, confirm migrations and shutdown/restart, and inspect permissions. These native startup checks remain pending. The first real GitHub Actions run passed separately on Ubuntu 24.04: https://github.com/wasatnight/api-sentinel/actions/runs/41297019150

@@ -13,11 +13,11 @@
 - Browser reviewed with the candidate's fictional paused records: dark dashboard and light report captured without private profile/operational data.
 - Publication file inventory and pattern scan reviewed; no active credentials found in included source. The test string `https://u:p@example.com` is an intentional rejection fixture, not an active secret.
 
-## CI preparation, not a remote result
+## CI preparation and verified remote result
 
 Workflow uses Ubuntu 24.04, Python 3.12, Node 22 and PostgreSQL 18, disposable CI-only credentials, monitoring disabled, explicit test database, migrations, Ruff, backend/frontend tests, schema check, frontend build and npm audit. Job timeout 15 minutes, contents:read and checkout persist-credentials:false. Official v7 action refs were resolved via GitHub API and pinned to commit SHAs; see ci.yml. Dependency images/packages remain versioned by tag/version, not container digest/package hashes.
 
-No candidate remote, push, GitHub Actions run, badge, published release or Alignerr approval is claimed. Workflow syntax review and local checks do not prove CI passed. Docker/Compose and Linux/WSL2 were not executed. WSL was absent; installation would require owner-controlled administrator steps and potentially restart.
+Public code repository: https://github.com/wasatnight/api-sentinel . Code was published on main at commit 81e0521065e7c4fdae1110e851556e6123ca835f. The [first actual push workflow](https://github.com/wasatnight/api-sentinel/actions/runs/41297019150) completed successfully on 2026-11-01. All verification steps passed on Ubuntu 24.04: dependency installation, migrations, Ruff, 106 backend tests, schema check, 24 frontend tests, production build and npm audit. This is a real GitHub execution, separate from earlier local checks. Native WSL2 startup, the project Docker Compose path and Linux startup helper remain unverified. The CI PostgreSQL service did run in Docker on GitHub. WSL remains absent locally; installation would require owner-controlled administrator steps and potentially restart. No application deployment or Alignerr approval is claimed.
 
 ## Known remaining limits
 
