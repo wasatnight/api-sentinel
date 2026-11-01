@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: api_sentinel_review
+      POSTGRES_USER: sentinel_admin
+      POSTGRES_PASSWORD: ${SENTINEL_DB_ADMIN_PASSWORD:?Set a disposable administrator password}
+      SENTINEL_DB_PASSWORD: ${SENTINEL_DB_PASSWORD:?Set a separate application password}
+    ports:
+      - "127.0.0.1:55434:5432"
+    volumes:
+      - sentinel_review_postgres:/var/lib/postgresql
+      - ./scripts/docker-init.sh:/docker-entrypoint-initdb.d/10-sentinel.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel_admin -d api_sentinel_review"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  sentinel_review_postgres:
